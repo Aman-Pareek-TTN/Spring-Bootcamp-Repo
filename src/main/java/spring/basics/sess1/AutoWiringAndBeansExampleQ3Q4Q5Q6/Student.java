@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class Student implements Person{
 
     public String getIdentification() {
+
         return "Student";
     }
 }
