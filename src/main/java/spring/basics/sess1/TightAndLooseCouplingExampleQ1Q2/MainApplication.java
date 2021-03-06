@@ -1,4 +1,4 @@
-package TightAndLooseCouplingExampleQ1Q2;
+package spring.basics.sess1.TightAndLooseCouplingExampleQ1Q2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +15,7 @@ public class MainApplication {
         TightCouplingClass1 tightCouplingClass1=new TightCouplingClass1();
         TightCouplingClass2 tightCouplingClass2=new TightCouplingClass2();
         tightCouplingClass1.print();
-        tightCouplingClass1.print();
+        tightCouplingClass2.print();
 
         //We are using same interface
         //for classes that are loosely coupled

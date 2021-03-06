@@ -1,4 +1,4 @@
-package AutoWiringAndBeansExampleQ3Q4Q5Q6;
+package spring.basics.sess1.AutoWiringAndBeansExampleQ3Q4Q5Q6;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
