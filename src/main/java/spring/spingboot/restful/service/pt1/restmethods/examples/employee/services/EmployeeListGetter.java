@@ -1,9 +1,8 @@
-package spring.spingboot.restful.service.pt1.restmethods.examples;
+package spring.spingboot.restful.service.pt1.restmethods.examples.employee.services;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import spring.spingboot.restful.service.pt1.restmethods.examples.employee.services.Employee;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

@@ -1,14 +1,23 @@
-package spring.spingboot.restful.service.pt1.restmethods.examples;
+package spring.spingboot.restful.service.pt1.restmethods.examples.employee.services;
 
 
 import org.springframework.stereotype.Component;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 @Component //Ques 2
 public class Employee{
 
     private String id;
+
+    @Size(min=2)
     private String name;
     private String department;
+
+    @Min(18)
+    @Max(60)
     private int age;
 
     public Employee(){
@@ -56,13 +65,15 @@ public class Employee{
 
     public String toString(){
 
-        return "[" +
+        return "[ id: " +
                 this.getId() +
-                " : " +
+                ", name : " +
                 this.getName() +
-                " : " +
+                ", department: " +
                 this.getDepartment() +
-                "]";
+                ", age: " +
+                this.getAge() +
+                " ]";
     }
 
 }

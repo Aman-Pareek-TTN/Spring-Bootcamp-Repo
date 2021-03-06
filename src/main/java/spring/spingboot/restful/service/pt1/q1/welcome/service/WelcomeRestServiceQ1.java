@@ -13,7 +13,7 @@ public class WelcomeRestServiceQ1 {
     @RequestMapping(method = RequestMethod.GET,path = "/Welcome")
     public String welcomeMethod(){
 
-        return "Welcome to my Spring boot";
+        return "Welcome to Spring boot";
     }
 
     public static void main(String[] args)
