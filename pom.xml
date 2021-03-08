@@ -28,14 +28,12 @@
 			<scope>test</scope>
 		</dependency>
 
-
-		<!-- Actuator for health check and info about the application (Ques 10) -->
+		<!-- Actuator for health check and info about the application (pt1 Ques 10) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 			<version>2.4.3</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -70,9 +68,33 @@
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+			<version> 2.4.0 </version>
+		</dependency>
+
+		<!-- xml dependency for xml acceptance (pt2 Ques 3 4) -->
+		<!-- remove for xml
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+		-->
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>spring-bootcamp</groupId>
+			<artifactId>spring-bootcamp-project</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
-
-
 
 	<build>
 		<plugins>

@@ -1,21 +1,35 @@
-package spring.spingboot.restful.service.pt1.restmethods.examples.employee.services;
+package spring.springboot.restful.services.example.employee.services;
 
 
+import com.fasterxml.jackson.annotation.JsonFilter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
-@Component //Ques 2
+@Component //pt1 Ques 2
+@ApiModel(description = "All details about the Employee") //pt2 Ques 6
+@JsonFilter("EmployeeNameAndDepartment")
 public class Employee{
 
+    //static way
+    //@JsonIgnore
+    @ApiModelProperty(notes="remove comments for applying static filtering")
     private String id;
 
+    //pt2 Ques 6 attribute description
+    @ApiModelProperty(notes="name should have more than 2 letters")
+    //pt1 Q9 validation
     @Size(min=2)
     private String name;
     private String department;
 
+    //pt2 Ques 6 attribute description
+    @ApiModelProperty(notes="age must be GT 18 and LT 60")
+    //pt1 Q9 validation
     @Min(18)
     @Max(60)
     private int age;
@@ -30,6 +44,8 @@ public class Employee{
         this.department = department;
         this.age = age;
     }
+
+
 
     public String getId() {
         return id;

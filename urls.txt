@@ -1,13 +1,14 @@
-//url to get all employees (Ques 3) = http://localhost:8080/Employees
+//url to get Welcome message (Ques 1) = http://localhost:8080/welcome
 
-//url to get top employee  (Ques 4) = http://localhost:8080/Employees/top
+//url to get all employees (Ques 3) = http://localhost:8080/employees
 
-// url to get create new employee  (Ques 5) = http://localhost:8080/Employees
+//url to get top employee  (Ques 4) = http://localhost:8080/employees/top
 
-//url to delete employee  (Ques 7) = http://localhost:8080/Employees/{id}
+// url to get create new employee  (Ques 5) = http://localhost:8080/employees
 
-//url to update employee  (Ques 8) = http://localhost:8080/Employees/{id}
+//url to delete employee  (Ques 7) = http://localhost:8080/employees/{id}
 
+//url to update employee  (Ques 8) = http://localhost:8080/employees/{id}
 
 // url to get actuator (Ques 10) =    http://localhost:8080/actuator
 // url to get hal browser (Ques 10) =    http://localhost:8080/browser/index.html#/

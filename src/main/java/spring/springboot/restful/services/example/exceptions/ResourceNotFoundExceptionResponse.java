@@ -1,4 +1,4 @@
-package spring.spingboot.restful.service.pt1.restmethods.examples.exceptions;
+package spring.springboot.restful.services.example.exceptions;
 
 
 

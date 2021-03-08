@@ -1,4 +1,4 @@
-package spring.spingboot.restful.service.pt1.restmethods.examples.exceptions;
+package spring.springboot.restful.services.example.exceptions;
 
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpHeaders;
@@ -32,7 +32,7 @@ public class CustomResponseEntityExceptionHandler
                 HttpStatus.NOT_FOUND);
     }
 
-    // Ques 9 Validation failure handling
+    //pt1 Ques 9 Validation failure handling
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                 HttpHeaders headers, HttpStatus status, WebRequest request)
     {

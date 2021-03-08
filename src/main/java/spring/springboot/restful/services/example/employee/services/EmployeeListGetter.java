@@ -1,14 +1,14 @@
-package spring.spingboot.restful.service.pt1.restmethods.examples.employee.services;
+package spring.springboot.restful.services.example.employee.services;
 
-import org.springframework.stereotype.Component;
-import spring.spingboot.restful.service.pt1.restmethods.examples.employee.services.Employee;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+
 public class EmployeeListGetter {
 
+    @Bean
     public List<Employee> getList()
     {
         return Arrays.asList(
