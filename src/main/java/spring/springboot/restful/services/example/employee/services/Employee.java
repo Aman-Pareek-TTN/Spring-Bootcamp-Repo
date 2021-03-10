@@ -1,22 +1,26 @@
 package spring.springboot.restful.services.example.employee.services;
 
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
+@Entity//jpa exercise Ques 1m
+@Table
 @Component //pt1 Ques 2
 @ApiModel(description = "All details about the Employee") //pt2 Ques 6
-@JsonFilter("EmployeeNameAndDepartment")
+//@JsonFilter("EmployeeNameAndDepartment")
 public class Employee{
 
-    //static way
-    //@JsonIgnore
+    @Id
+    //@JsonIgnore //static way
     @ApiModelProperty(notes="remove comments for applying static filtering")
     private String id;
 
