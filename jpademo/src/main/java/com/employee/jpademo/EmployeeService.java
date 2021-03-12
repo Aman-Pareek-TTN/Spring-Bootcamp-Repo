@@ -67,16 +67,16 @@ public class EmployeeService {
     }
 
     //jpa Q10
-//    public List<Employee> employeeFindByNameStartingWithSeq(String seq) {
-//
-//        List<Employee> employees = employeeRepository.findByNameStartingWith(seq);
-//
-//        return employees;
-//
-//    }
+    public List<Employee> employeeFindByNameStartingWithLettera() {
+
+        List<Employee> employees = employeeRepository.findByNameLike("a%");
+
+        return employees;
+
+    }
 
     //jpa Q11
-    public List<Employee> employeeFindByEmployeeAgeBetween() {
+    public List<Employee> employeeFindByEmployeeAgeBetween28And32() {
 
         List<Employee> employees = employeeRepository.findByAgeBetween(28,32);
 

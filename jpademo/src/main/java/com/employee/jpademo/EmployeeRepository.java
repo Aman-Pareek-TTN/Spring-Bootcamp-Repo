@@ -12,7 +12,7 @@ public interface EmployeeRepository extends CrudRepository<Employee,Integer> {
 
     List<Employee> findByAgeBetween(int i, int i1);
 
-    List<Employee> findByNameStartingWith(String seq);
+    List<Employee> findByNameLike(String pattern);
 
     List<Employee> findByName(String aman);
 }

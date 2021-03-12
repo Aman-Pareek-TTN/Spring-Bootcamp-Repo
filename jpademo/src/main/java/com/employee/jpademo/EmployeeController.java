@@ -56,17 +56,17 @@ public class EmployeeController {
 
     }
 
-//    @GetMapping("/read-employee/{name}")
-//    public List<Employee> getEmployeeStartingWith(@PathVariable String seq) {
-//
-//        return employeeService.employeeFindByNameStartingWithSeq(seq);
-//
-//    }
+    @GetMapping("/read-employee-that-has-a-as-starting-letter")
+    public List<Employee> getEmployeeStartingWith() {
+
+        return employeeService.employeeFindByNameStartingWithLettera();
+
+    }
 
     @GetMapping("/read-employee-between-age")
     public List<Employee> getEmployeeWithAgeBetween() {
 
-        return employeeService.employeeFindByEmployeeAgeBetween();
+        return employeeService.employeeFindByEmployeeAgeBetween28And32();
     }
 
 
