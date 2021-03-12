@@ -1,6 +1,9 @@
 package com.employee.jpademo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -69,5 +72,10 @@ public class EmployeeController {
         return employeeService.employeeFindByEmployeeAgeBetween28And32();
     }
 
+    @GetMapping("/read-employees-with-age-sorted-3-employees-per-page")
+    public List<Employee> ageSortingAndPaging(){
+        Pageable pageable = PageRequest.of(3,3, Sort.Direction.ASC,"age");
 
+        return employeeService.findAllEmployees(pageable);
+    }
 }

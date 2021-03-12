@@ -1,10 +1,12 @@
 package com.employee.jpademo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeService {
@@ -66,6 +68,13 @@ public class EmployeeService {
 
     }
 
+    //jpa Q9
+    public List<Employee> findAllEmployees(Pageable pageable) {
+
+        return employeeRepository.findAll(pageable).get()
+                .collect(Collectors.toList());
+    }
+
     //jpa Q10
     public List<Employee> employeeFindByNameStartingWithLettera() {
 
@@ -83,6 +92,8 @@ public class EmployeeService {
         return employees;
 
     }
+
+
 
 
 
