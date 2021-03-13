@@ -1,10 +1,10 @@
-package com.employee.jpademo;
+package com.jpql.jpqldemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JpademoApplicationTests {
+class JpqldemoApplicationTests {
 
 	@Test
 	void contextLoads() {
