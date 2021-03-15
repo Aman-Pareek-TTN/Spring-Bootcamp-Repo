@@ -11,7 +11,6 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api")
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
@@ -27,6 +26,7 @@ public class EmployeeController {
 
     @GetMapping(path = "/getemployee")
     public Iterable<Employee> retriveAllEmployeeUser() {
+
         return employeeService.retriveEmployeeDetails();
     }
 
@@ -35,31 +35,40 @@ public class EmployeeController {
 
     @GetMapping(path = "/getallemployee")
     public List<Object[]> retriveAllEmployee() {
+
         return employeeService.getAllEmployee();
     }
 
     @Transactional
     @PatchMapping(path = "/updateemployee")
     public void updateSalary(@RequestParam int salary) {
-        employeeService.updateEmployeeSalary(salary);
+
+        int avgSal=employeeService.getAvgEmployeeSalary();
+
+        employeeService.updateEmployeeSalary(avgSal,(int)salary);
     }
 
     @Transactional
     @Rollback(false)
     @DeleteMapping(path = "/deleteemployee")
     public void deleteEmployeeDetails() {
-        employeeService.deleteEmployee();
+
+        int minSal=employeeService.getMinEmployeeSalary();
+
+        employeeService.deleteEmployee(minSal);
     }
 
     //Native SQL Query
     @GetMapping(path = "/getemployeenq")
-    public List<Object[]> retriveEmployeeNQ(@RequestParam String lastName) {
+    public List<Object[]> retrieveEmployeeNQ(@RequestParam String lastName) {
+
         return employeeService.getEmployeeNQ(lastName);
     }
 
     @Transactional
     @DeleteMapping(path = "/deleteemployeenq")
     public void deleteEmployeeNQ(@RequestParam int age) {
+
         employeeService.deleteEmployeeDetailNQ(age);
     }
 

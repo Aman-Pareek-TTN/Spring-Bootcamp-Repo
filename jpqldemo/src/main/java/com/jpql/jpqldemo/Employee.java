@@ -3,18 +3,19 @@ package com.jpql.jpqldemo;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "employeeTable")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "empid")
+    @Column(name = "empId")
     private int id;
-    @Column(name = "empfirstname")
+    @Column(name = "empFirstName")
     private String firstName;
-    @Column(name = "emplastname")
+    @Column(name = "empLastName")
     private String lastName;
-    @Column(name = "empsalary")
+    @Column(name = "empSalary")
     private int salary;
-    @Column(name = "empage")
+    @Column(name = "empAge")
     private int age;
 
     public Employee() {

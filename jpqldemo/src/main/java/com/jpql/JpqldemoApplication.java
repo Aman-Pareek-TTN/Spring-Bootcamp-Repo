@@ -1,4 +1,4 @@
-package com.jpql.jpqldemo;
+package com.jpql;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JpqldemoApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(JpqldemoApplication.class, args);
 	}
 

@@ -24,23 +24,35 @@ public class EmployeeService {
         return employeeRepository.findAllEmployee();
     }
 
-    public void updateEmployeeSalary(int salary) {
-        employeeRepository.updateSalary(salary);
+    public void updateEmployeeSalary(int avgSal, int salary) {
+        employeeRepository.updateSalary(avgSal,salary);
     }
 
-    public void deleteEmployee() {
-        employeeRepository.deleteEmployee();
+    public void deleteEmployee(int minSal) {
+
+        employeeRepository.deleteEmployee(minSal);
     }
 
+    public int getAvgEmployeeSalary(){
+
+        return employeeRepository.findAvgEmployeeSalary();
+    }
+
+    public int getMinEmployeeSalary(){
+
+        return employeeRepository.findMinEmployeeSalary();
+    }
 
     //Native SQL Query
 
     public List<Object[]> getEmployeeNQ(String lastName) {
+
         return employeeRepository.findEmployeeNQ(lastName);
     }
 
     public void deleteEmployeeDetailNQ(int age) {
         employeeRepository.deleteEmployeeNQ(age);
     }
+
 
 }

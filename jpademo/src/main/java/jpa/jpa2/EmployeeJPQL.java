@@ -3,24 +3,24 @@ package jpa.jpa2;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "employeeTable")
+@Table(name = "employeetable")
 public class EmployeeJPQL {
 
     @Id                    // Primary Key
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "empId")
+    @Column(name = "empid")
     private int id;
 
-    @Column(name = "empFirstName")
+    @Column(name = "empfirstname")
     private String firstName;
 
-    @Column(name = "empLastName")
+    @Column(name = "emplastname")
     private String lastName;
 
-    @Column(name = "empSalary")
+    @Column(name = "empsalary")
     private double salary;
 
-    @Column(name = "empAge")
+    @Column(name = "empage")
     private int age;
 
     public EmployeeJPQL() {
