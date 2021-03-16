@@ -1,23 +1,21 @@
 package com.jpa3;
 
 import lombok.Data;
-import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
+import java.util.Set;
 
 //OneToMany Book
 @Data
-//jpa3 q5
 @Entity
-public class Book {
+public class BookMToM {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int bookId;
+    private int bookMToMId;
 
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "auth_id")
-    private Author author;
+    @ManyToMany(mappedBy = "book_m_to_m_set")
+    private Set<Author> authorSet;
 }

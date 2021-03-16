@@ -9,7 +9,7 @@ import javax.persistence.Embeddable;
 @Data
 public class Address {
 
-    int streetNumber;
-    String location;
-    String State;
+    private int streetNumber;
+    private String location;
+    private String state;
 }
