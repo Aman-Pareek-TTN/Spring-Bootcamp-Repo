@@ -15,7 +15,7 @@ public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int authId;
+    private int id;
 
     private String name;
 
@@ -23,28 +23,35 @@ public class Author {
     @Embedded
     private Address address;
 
-    @ElementCollection
-    @CollectionTable(name="auth_subject",joinColumns=@JoinColumn(name="auth_id"))
-    private List<AuthSubject> subjects;
+    @OneToMany(mappedBy = "author",cascade = CascadeType.ALL)
+    private List<AuthSubject> subjectSet = new ArrayList<AuthSubject>();
 
+    @OneToOne(mappedBy = "author",cascade = CascadeType.ALL)
+    private Book book;
+
+    /*
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    private Set<Book> bookSet;
+    private List<Book> bookSet=new ArrayList<>();
+    */
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "author_book_m_to_m",
-            joinColumns = @JoinColumn(name = "authId", referencedColumnName = "auth_id"),
-            inverseJoinColumns = @JoinColumn(name = "bookMtoMId", referencedColumnName = "book_m_to_m_id"))
-    private Set<BookMToM> bookMToMSet;
 
+/*
+    @JoinTable(name = "authors_books",
+               joinColumns = @JoinColumn(name = "author_id",referencedColumnName = "id"),
+               inverseJoinColumns =@JoinColumn(name = "book_id",referencedColumnName = "id") )
+       @ManyToMany
+       private List<Book> bookSet = new ArrayList<Book>();
     public void addBook(Book book){
 
         if(bookSet==null)
         {
-            bookSet=new HashSet<>();
+            bookSet=new ArrayList<>();
         }
         book.setAuthor(this);
         bookSet.add(book);
     }
+*/
+
 
     public void addAddress(int street, String location, String state){
 

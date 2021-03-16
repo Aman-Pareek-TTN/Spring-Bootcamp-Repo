@@ -1,8 +1,10 @@
 package com.jpa3;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -16,7 +18,14 @@ public class AuthorService {
 
     public void addAuthor(Author author){
 
+//        List<Book> bookSet = author.getBookSet();
+//        for(Book book : bookSet)
+//        {
+//            book.setAuthor(author);
+//        }
+
         repository.save(author);
+
     }
 
     public List<Author> getAuthors(){
@@ -24,6 +33,7 @@ public class AuthorService {
         return (List<Author>) repository.findAll();
     }
 
+    /*
     public void addSubjects(Author author,String... subNames){
 
         List<AuthSubject> subjects=new ArrayList<>();
@@ -36,7 +46,7 @@ public class AuthorService {
             subjects.add(subject);
         }
 
-        author.setSubjects(subjects);
+        author.setSubjectSet(subjects);
 
 
     }
@@ -55,20 +65,5 @@ public class AuthorService {
 
     }
 
-    public void addMToMBooks(Author author,String... bookNames){
-
-        BookMToM book=new BookMToM();
-        Set<BookMToM> bookMToMSet =  new HashSet<>();
-
-        for(String name : bookNames)
-        {
-            book = new BookMToM();
-            book.setName(name);
-            bookMToMSet.add(book);
-
-        }
-
-        author.setBookMToMSet(bookMToMSet);
-
-    }
+     */
 }

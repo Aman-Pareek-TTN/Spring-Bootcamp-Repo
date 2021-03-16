@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
+import java.util.List;
 
 //OneToMany Book
 @Data
@@ -13,11 +14,20 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int bookId;
+    private int id;
 
     private String name;
 
+/*
     @ManyToOne
-    @JoinColumn(name = "auth_id")
+    @JoinColumn(name = "author_id")
     private Author author;
+    */
+
+    /*
+     @ManyToMany
+    @JoinColumn(name = "author_id")
+    private List<Author> author;
+*/
+
 }

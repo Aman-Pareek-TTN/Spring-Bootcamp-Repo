@@ -1,0 +1,13 @@
+Question 9 : Which method on the session object can be used to remove an object from the cache?
+
+Ans:
+    1. session evict() method to remove a single object from the hibernate first level cache.
+    2. session clear() method to clear the cache i.e delete all the objects from the cache.
+
+    Both methods are used when hibernate stores objects in cache.
+
+
+Question 10 : What does @transactional annotation do?
+Ans:
+    @transactional annotation to separate transaction management code from the other types of code
+    for eg: a service layer code.

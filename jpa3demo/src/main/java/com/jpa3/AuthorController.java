@@ -30,6 +30,7 @@ public class AuthorController {
         return service.getAuthors();
     }
 
+/*
     @PostMapping("/addSampleAuthor")
     public void addSampleAuthor()
     {
@@ -43,12 +44,8 @@ public class AuthorController {
         service.addBooks(author,"carsAndItsFunctions",
                 "bikesAndItsFunctions","mechanicsAndItsFunctions");
 
-        service.addMToMBooks(author,"carsAndItsFunctions",
-                "bikesAndItsFunctions","mechanicsAndItsFunctions");
-
-
         service.addAuthor(author);
     }
-
+*/
 
 }
