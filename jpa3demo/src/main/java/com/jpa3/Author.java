@@ -14,7 +14,7 @@ import java.util.*;
 public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
@@ -26,23 +26,27 @@ public class Author {
     @OneToMany(mappedBy = "author",cascade = CascadeType.ALL)
     private List<AuthSubject> subjectSet = new ArrayList<AuthSubject>();
 
+/*
     @OneToOne(mappedBy = "author",cascade = CascadeType.ALL)
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book book;
-
-    /*
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    private List<Book> bookSet=new ArrayList<>();
-    */
+*/
 
 
 /*
-    @JoinTable(name = "authors_books",
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    private List<Book> books=new ArrayList<>();
+*/
+
+
+       @ManyToMany(cascade = CascadeType.ALL)
+       @JoinTable(name = "authors_books",
                joinColumns = @JoinColumn(name = "author_id",referencedColumnName = "id"),
                inverseJoinColumns =@JoinColumn(name = "book_id",referencedColumnName = "id") )
-       @ManyToMany
-       private List<Book> bookSet = new ArrayList<Book>();
-    public void addBook(Book book){
+       private List<Book> books = new ArrayList<Book>();
 
+/*
+    public void addBook(Book book){
         if(bookSet==null)
         {
             bookSet=new ArrayList<>();

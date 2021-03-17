@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class AuthSubject {
 
    @Id
-   @GeneratedValue(strategy = GenerationType.AUTO)
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
    private int authSubId;
 
    private String name;

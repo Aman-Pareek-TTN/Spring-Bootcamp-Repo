@@ -13,21 +13,25 @@ import java.util.List;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
 
 /*
-    @ManyToOne
-    @JoinColumn(name = "author_id")
+    @OneToOne
     private Author author;
-    */
-
-    /*
-     @ManyToMany
-    @JoinColumn(name = "author_id")
-    private List<Author> author;
 */
+
+/*
+    @ManyToOne
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
+    private Author author;
+*/
+
+
+    @ManyToMany(mappedBy = "books")
+    private List<Author> author;
+
 
 }

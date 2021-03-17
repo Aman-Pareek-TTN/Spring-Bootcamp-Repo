@@ -24,11 +24,11 @@ public class AuthorController {
         service.addAuthor(author);
     }
 
-    @GetMapping("/getAllAuthors")
-    public List<Author> getAllAuthors(){
-
-        return service.getAuthors();
-    }
+//    @GetMapping("/getAllAuthors")
+//    public List<Author> getAllAuthors(){
+//
+//        return service.getAuthors();
+//    }
 
 /*
     @PostMapping("/addSampleAuthor")
